@@ -1,3 +1,6 @@
+var topicselected = [];
+var purposeselected = [];
+
 $('#1_abm').click(function () {
     $('#cardcontainer').hide()
     $('#test').show()
@@ -8,13 +11,59 @@ $('.gohome').click(function () {
     $('#test').hide()
 })
 
-$('#topicfilter a').click(function() {
-    $('.card').removeClass('d-none');
-    topicselect = ($(this).text())
-    if (topicselect != 'All'){
-        $('#cardcontainer').find('.card .card-text:not(:contains("'+topicselect+'"))').parent().parent().addClass('d-none');
+$('#topicfilter').change(function () {
+    topicselected = [];
+    var choices = $(this).find("option:selected")
+    $(choices).each(function () {
+        topicselected.push($(this).text())
+    })
+    if (topicselected.length != 0){
+        topicselected.forEach(element => $('#cardcontainer').find('.card .topic:not(:contains("' + element + '"))').parent().parent().addClass('d-none'))
+    }
+    if (topicselected.length == 0){
+        $('.card').removeClass('d-none')
+        if (purposeselected.length > 0){
+        purposeselected.forEach(element => $('#cardcontainer').find('.card .purpose:not(:contains("' + element + '"))').parent().parent().addClass('d-none'))
+    }
+        else {
+                $('.card').removeClass('d-none');
+
+        }}
+})
+
+$('#purposefilter').change(function () {
+    purposeselected = [];
+    var choices = $(this).find("option:selected")
+    $(choices).each(function () {
+        purposeselected.push($(this).text())
+    })
+    if (purposeselected.length > 0){
+    purposeselected.forEach(element => $('#cardcontainer').find('.card .purpose:not(:contains("' + element + '"))').parent().parent().addClass('d-none'))
+    }
+    if (purposeselected.length == 0){
+        $('.card').removeClass('d-none')
+        if (topicselected.length > 0){
+            topicselected.forEach(element => $('#cardcontainer').find('.card .topic:not(:contains("' + element + '"))').parent().parent().addClass('d-none'))
+        }
+        else {
+            $('.card').removeClass('d-none')
+        }
     }
 })
+
+
+$(document).ready(function () {
+
+    var multipleCancelButton = new Choices('#topicfilter', {
+        removeItemButton: true,
+    });
+
+    var multipleCancelButton2 = new Choices('#purposefilter', {
+        removeItemButton: true,
+    });
+
+    });
+
 
 $.ajax({
     type: "GET",
@@ -22,7 +71,6 @@ $.ajax({
     dataType: "text",
     success: function (data) {
         dat2 = $.csv.toObjects(data)
-        console.log(dat2)
         $('#projname').text(dat2[0].title)
         $('#topdescription').html("<p style='font-size: 20px;'>" + dat2[0].description + "</p>")
         $('#firstcol').html("<b>Topic: </b>" + dat2[0].topic +
