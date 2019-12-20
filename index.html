@@ -16,11 +16,36 @@
     <link rel="stylesheet"
         href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006288/BBBootstrap/choices.min.css?version=7.0.0">
 
-    <title>Hello, world!</title>
+    <title>DataViz Menu</title>
 
 </head>
 
 <body>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">About</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         This gallery is hosted through GitHub.  View all the code in the <a href="https://github.com/sarahcmap/datavizmenu" target="_blank">project repository</a>.  
+        <br><br>
+         Additional packages: Bootstrap v4, JQuery 3.4, and <a href="https://github.com/jshjohnson/Choices" target="_blank">Choices</a>.  
+            <br><br>
+            Last Updated: December 2019
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Home Page -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand gohome" href="#">Data Visualization Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartopNav"
@@ -30,7 +55,10 @@
         <div class="collapse navbar-collapse" id="navbartopNav">
             <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">APIs</a>
+                    <a class="nav-link" data-toggle="modal" href="#exampleModal">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link resources" href="#">Resources</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="http://wiki.cmap.local/mediawiki/index.php/Data_Visualization_at_CMAP#Resources">Wiki</a>
@@ -39,6 +67,8 @@
         </div>
     </nav>
 
+    <div id="homepage">
+<!-- Filter Dropdowns -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarfilterNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,52 +95,8 @@
         </div>
     </nav>
 
+    <!-- Cards - In alphabetical order [done manually for now]-->
     <div id="cardcontainer" class="container" style="margin-top: 50px;">
-        <div class="card h-100">
-            <img src="abmpic.JPG" class="card-img-top" alt="..." style="height:60%;">
-            <div class="card-body">
-                <h5 class="card-title">ABM Calibration and Validation Report</h5>
-                <p class="card-text">
-                    <div class="topic">
-                        <b>Topic:</b> Transportation, Modeling <br>
-                    </div>
-                    <div class="purpose">
-                        <b>Purpose:</b> Compare (2)
-                    </div>
-                </p>
-                <a href="#" class="card-link" id="1_abm">See More</a>
-            </div>
-        </div>
-        <div class="card h-100">
-            <img src="tipatlasplacehold.JPG" class="card-img-top" alt="..." style="height:60%;">
-            <div class="card-body">
-                <h5 class="card-title">TIP Atlas</h5>
-                <p class="card-text">
-                    <div class="topic">
-                        <b>Topic:</b> Transportation, TIP <br>
-                    </div>
-                    <div class="purpose">
-                        <b>Purpose:</b> Show Location
-                    </div>
-                </p>
-                <a href="#" class="card-link" id="2_tip">See More</a>
-            </div>
-        </div>
-        <div class="card h-100">
-            <img src="metra.JPG" class="card-img-top" alt="..." style="height:60%">
-            <div class="card-body">
-                <h5 class="card-title">Metra's 2012 Proposed Service Changes</h5>
-                <p class="card-text">
-                    <div class="topic">
-                        <b>Topic:</b> Transportation <br>
-                    </div>
-                    <div class="purpose">
-                        <b>Purpose:</b> Compare (2)
-                    </div>
-                </p>
-                <a href="#" class="card-link">See More</a>
-            </div>
-        </div>
         <div class="card h-100">
             <img src="2ndcityzoning.JPG" class="card-img-top" alt="..." style="height:60%">
             <div class="card-body">
@@ -126,9 +112,59 @@
                 <a href="#" class="card-link">See More</a>
             </div>
         </div>
+
+        <div class="card h-100">
+            <img src="abmpic.JPG" class="card-img-top" alt="..." style="height:60%;">
+            <div class="card-body">
+                <h5 class="card-title">ABM Calibration and Validation Report</h5>
+                <p class="card-text">
+                    <div class="topic">
+                        <b>Topic:</b> Transportation, Modeling <br>
+                    </div>
+                    <div class="purpose">
+                        <b>Purpose:</b> Compare (2)
+                    </div>
+                </p>
+                <a href="#" class="card-link" id="1_abm">See More</a>
+            </div>
+        </div>
+
+        <div class="card h-100">
+            <img src="metra.JPG" class="card-img-top" alt="..." style="height:60%">
+            <div class="card-body">
+                <h5 class="card-title">Metra's 2012 Proposed Service Changes</h5>
+                <p class="card-text">
+                    <div class="topic">
+                        <b>Topic:</b> Transportation <br>
+                    </div>
+                    <div class="purpose">
+                        <b>Purpose:</b> Compare (2)
+                    </div>
+                </p>
+                <a href="#" class="card-link">See More</a>
+            </div>
+        </div>
+
+        <div class="card h-100">
+            <img src="tipatlasplacehold.JPG" class="card-img-top" alt="..." style="height:60%;">
+            <div class="card-body">
+                <h5 class="card-title">TIP Atlas</h5>
+                <p class="card-text">
+                    <div class="topic">
+                        <b>Topic:</b> Transportation, TIP <br>
+                    </div>
+                    <div class="purpose">
+                        <b>Purpose:</b> Show Location
+                    </div>
+                </p>
+                <a href="#" class="card-link" id="2_tip">See More</a>
+            </div>
+        </div>
+        
+    </div>
     </div>
 
-
+<!-- Project Detail Page -->
     <div id="test" style="display:none" class="mx-auto">
         <div style="width: 70%; margin-top: 50px;" class="mx-auto">
 
@@ -187,6 +223,63 @@
                 <a class="btn btn-outline-primary" id="documentation" href="" target="_blank" role="button">Documentation</a>
                 &nbsp;
                 <a class="btn btn-primary" href="" id="visitproj" target="_blank" role="button">Visit Resource</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Resources page -->
+    <div id="resources" style="display:none">
+        <div style="width: 70%; margin-top: 50px;" class="mx-auto">
+
+            <h1 id="projname" class="display-4">Staff Knowledge</h1>
+            Questions about a specific language or tool?  Reach out to the staff below.  
+            <br>
+            <br>
+            <div id="topdetail">
+                <div class="row">
+                    <div id="firstcol" class="col-sm">
+                        <b>R</b>: Noel, Martin, Stephanie, Greta, Britt <br>
+                        <b>Python</b>: Britt, Aaron, Noel, Sarah <br>
+                        <b>JavaScript</b>: Britt, Sarah <br>
+                        <b>HTML</b>: Britt, Sarah <br>
+                        <b>CSS</b>: Britt, Sarah <br>
+                    </div>
+                    <div id="secondcol" class="col-sm">
+                        <b>GIS Scripting</b>: Britt, Noel, Aaron <br>
+                        <b>SAS</b>: Craig <br>
+                        <b>GitHub</b>: Britt, Sarah, Noel <br>
+                        <b>Visual Basic</b>: Claire <br>
+                        <b>SQL</b>: Sarah
+                    </div>
+                    <div id="thirdcol" class="col-sm">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background-color:#F2F2F2; margin-top: 100px;">
+            <div style="padding-top: 50px; padding-bottom: 50px; font-size: 18px;" 
+                id="detail2">
+                <div style="width: 70%; margin-top: 50px; margin-left: 50%">
+
+                    <h1 id="projname" class="display-4">Common Data Sources</h1>
+
+                    <br>
+                    <br>
+                    <div id="topdetail">
+                        <div class="row">
+                            <div id="firstcol" class="col-sm">
+                                <b>Transportation</b>: source
+                            </div>
+                            <div id="secondcol" class="col-sm">
+                                <b>Census</b>: source <br>
+                            </div>
+                            <div id="thirdcol" class="col-sm">
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
             </div>
         </div>
     </div>

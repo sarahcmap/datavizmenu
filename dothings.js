@@ -3,15 +3,21 @@ var purposeselected = [];
 var whichproj
 
 $('.card-link').click(function () {
-    $('#cardcontainer').hide()
+    $('#homepage').hide()
     whichproj = $(this).attr("id")
     $('#test').show()
     updateprojpage(whichproj)
 });
 
 $('.gohome').click(function () {
-    $('#cardcontainer').show()
+    $('#homepage').show()
     $('#test').hide()
+    $('#resources').hide()
+});
+
+$('.resources').click(function () {
+    $('#homepage').hide()
+    $('#resources').show()
 });
 
 function updateprojpage(whichproj) {
