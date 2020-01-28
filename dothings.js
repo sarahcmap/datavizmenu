@@ -17,6 +17,7 @@ $('.gohome').click(function () {
 
 $('.resources').click(function () {
     $('#homepage').hide()
+    $('#test').hide()
     $('#resources').show()
 });
 
@@ -35,14 +36,14 @@ function updateprojpage(whichproj) {
     $('#secondcol').html("<b>Difficulty: </b>" + dat2[z].difficulty +
         "<hr style='height:10px; margin-top:0px; margin-bottom:0px; visibility:hidden;'/><b>Open Source: </b>" + dat2[z].open +
         "<hr style='height:10px; margin-top:0px; margin-bottom:0px; visibility:hidden;'/><b>Interactive: </b>" + dat2[z].interactive)
-    $('#thirdcol').html("<b>Map: </b>" + dat2[z].map +
-        "<hr style='height:10px; margin-top:0px; margin-bottom:0px; visibility:hidden;'/><b>Time: </b>" + dat2[z].time)
+    $('#thirdcol').html("<b>Includes Map: </b>" + dat2[z].map +
+        "<hr style='height:10px; margin-top:0px; margin-bottom:0px; visibility:hidden;'/><b>Uses Time Variable: </b>" + dat2[z].time)
     $('#detail2').html("<b>Data: </b>" + dat2[z].data +
         "<hr style='height:15px; margin-top:0px; margin-bottom:0px; visibility:hidden;'/><b>Tools: </b>" + dat2[z].tools +
         "<hr style='height:15px; margin-top:0px; margin-bottom:0px; visibility:hidden;'/><b>Text: </b>" + dat2[z].text +
         "<hr style='height:15px; margin-top:0px; margin-bottom:0px; visibility:hidden;'/><b>Staff: </b>" + dat2[z].staff)
-    $('#documentation').attr('href',dat2[z].projecturl)
-    $('#visitproj').attr('href',dat2[z].docurl)
+    $('#documentation').attr('href',dat2[z].docurl)
+    $('#visitproj').attr('href',dat2[z].projecturl)
     $('#carouselone').attr('src',dat2[z].pic1)
     $('#carouseltwo').attr('src',dat2[z].pic2)
     $('#carouselthree').attr('src',dat2[z].pic3)
