@@ -32,7 +32,7 @@
           </button>
         </div>
         <div class="modal-body">
-         This gallery is hosted through GitHub.  View all the code in the <a href="https://github.com/sarahcmap/datavizmenu" target="_blank">project repository</a>.  
+         This gallery is hosted with GitHub Pages.  View all the code in the <a href="https://github.com/sarahcmap/datavizmenu" target="_blank">project repository</a>.  
         <br><br>
          Additional packages: Bootstrap v4, JQuery 3.4, and <a href="https://github.com/jshjohnson/Choices" target="_blank">Choices</a>.  
             <br><br>
@@ -45,7 +45,72 @@
     </div>
   </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="tipModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Visit Resource</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="word-wrap: break-word">
+            Visit this resource at S:/Projects_FY20/DataVizAppDev/DynamicMaps   
+            <br><br>
+             View the documentation for usage instructions.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Visit Resource</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="word-wrap: break-word">
+            Visit this resource at S:/AdminGroups/ResearchAnalysis/nmp/Python_Library/arcpy_mapping_tools
+            <br><br>
+             Open ArcMap and right click in the ArcToolbox window: Add Toolbox..., then choose the toolbox in the folder above. 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="noDocModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Documentation</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="word-wrap: break-word">
+                There is no additional documentation for this project.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
   <!-- Home Page -->
+    <!-- Top nav links -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand gohome" href="#">Data Visualization Menu</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartopNav"
@@ -54,6 +119,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbartopNav">
             <ul class="navbar-nav ml-md-auto">
+                <li class="nav-item">
+                    <a class="nav-link gohome" href="#">Home</a>
+                </li> 
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="modal" href="#exampleModal">About</a>
                 </li>
@@ -77,17 +145,20 @@
         <div class="collapse navbar-collapse" id="navbarfilterNav">
             <ul class="navbar-nav">
                 <div id="topicdiv" style="min-width: 300px;">
+                    <!-- manually sorted alphabetically  -->
                     <select id="topicfilter" placeholder="Topic" multiple>
-                        <option value="transportation">Transportation</option>
+                        <option value="gis">GIS</option>
+                        <option value="infrastructure">Infrastructure</option>
                         <option value="modeling">Modeling</option>
                         <option value="tip">TIP</option>
-                        <option value="landuse">Land Use</option>
+                        <option value="transportation">Transportation</option>
                     </select>
                 </div>
 
                 <div id="purposediv" style="min-width: 300px;">
                     <select id="purposefilter" placeholder="Purpose" multiple>
                         <option value="compare">Compare (2)</option>
+                        <option value="locate">Show Attributes</option>
                         <option value="locate">Show Location</option>
                     </select>
                 </div>
@@ -97,23 +168,8 @@
 
     <!-- Cards - In alphabetical order [done manually for now]-->
     <div id="cardcontainer" class="container" style="margin-top: 50px;">
-        <div class="card h-100">
-            <img src="2ndcityzoning.JPG" class="card-img-top" alt="..." style="height:60%">
-            <div class="card-body">
-                <h5 class="card-title">2nd City Zoning</h5>
-                <p class="card-text">
-                    <div class="topic">
-                        <b>Topic:</b> Land Use <br>
-                    </div>
-                    <div class="purpose">
-                        <b>Purpose:</b> Show Location
-                    </div>
-                </p>
-                <a href="#" class="card-link">See More</a>
-            </div>
-        </div>
 
-        <div class="card h-100">
+        <div class="card">
             <img src="abmpic.JPG" class="card-img-top" alt="..." style="height:60%;">
             <div class="card-body">
                 <h5 class="card-title">ABM Calibration and Validation Report</h5>
@@ -129,29 +185,45 @@
             </div>
         </div>
 
-        <div class="card h-100">
-            <img src="metra.JPG" class="card-img-top" alt="..." style="height:60%">
+            <div class="card">
+                <img src="map1.JPG" class="card-img-top" alt="..." style="height:60%">
+                <div class="card-body">
+                    <h5 class="card-title">Map Series Tool</h5>
+                    <p class="card-text">
+                        <div class="topic">
+                            <b>Topic:</b> GIS <br>
+                        </div>
+                        <div class="purpose">
+                            <b>Purpose:</b> Show Location
+                        </div>
+                    </p>
+                    <a href="#" class="card-link" id="4_mapseries">See More</a>
+                </div>
+            </div>
+
+        <div class="card">
+            <img src="sidewalk1.JPG" class="card-img-top" alt="..." style="height:60%">
             <div class="card-body">
-                <h5 class="card-title">Metra's 2012 Proposed Service Changes</h5>
+                <h5 class="card-title">Regional Sidewalk Inventory</h5>
                 <p class="card-text">
                     <div class="topic">
-                        <b>Topic:</b> Transportation <br>
+                        <b>Topic:</b> Transportation, Infrastructure <br>
                     </div>
                     <div class="purpose">
-                        <b>Purpose:</b> Compare (2)
+                        <b>Purpose:</b> Show Location, Show Attributes
                     </div>
                 </p>
-                <a href="#" class="card-link">See More</a>
+                <a href="#" class="card-link" id="3_sidewalk">See More</a>
             </div>
         </div>
 
-        <div class="card h-100">
-            <img src="tipatlasplacehold.JPG" class="card-img-top" alt="..." style="height:60%;">
+        <div class="card">
+            <img src="atlas1.png" class="card-img-top" alt="..." style="height:60%;">
             <div class="card-body">
                 <h5 class="card-title">TIP Atlas</h5>
                 <p class="card-text">
                     <div class="topic">
-                        <b>Topic:</b> Transportation, TIP <br>
+                        <b>Topic:</b> Transportation, TIP, GIS <br>
                     </div>
                     <div class="purpose">
                         <b>Purpose:</b> Show Location
@@ -182,14 +254,14 @@
                     </div>
                 </div>
             </div>
-            <br><br>
+            <br><br><br>
             <div id="carouselExampleIndicators" class="carousel slide mx-auto" data-ride="carousel" data-interval="false" style="width: 70%">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner" style="height: 45vh">
                     <div class="carousel-item active">
                         <img src="" class="d-block w-100" alt="..."  id="carouselone">
                     </div>

@@ -43,7 +43,19 @@ function updateprojpage(whichproj) {
         "<hr style='height:15px; margin-top:0px; margin-bottom:0px; visibility:hidden;'/><b>Text: </b>" + dat2[z].text +
         "<hr style='height:15px; margin-top:0px; margin-bottom:0px; visibility:hidden;'/><b>Staff: </b>" + dat2[z].staff)
     $('#documentation').attr('href',dat2[z].docurl)
+    if (dat2[z].dmodal == 'yes'){
+        $('#documentation').attr('data-toggle','modal')
+    }
+    if (dat2[z].dmodal == 'no'){
+        $('#documentation').attr('data-toggle','')
+    }
     $('#visitproj').attr('href',dat2[z].projecturl)
+    if (dat2[z].pmodal == 'yes'){
+        $('#visitproj').attr('data-toggle','modal')
+    }
+    if (dat2[z].pmodal == 'no'){
+        $('#visitproj').attr('data-toggle','')
+    }
     $('#carouselone').attr('src',dat2[z].pic1)
     $('#carouseltwo').attr('src',dat2[z].pic2)
     $('#carouselthree').attr('src',dat2[z].pic3)
