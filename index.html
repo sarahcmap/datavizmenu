@@ -36,7 +36,7 @@
         <br><br>
          Additional packages: Bootstrap v4, JQuery 3.4, and <a href="https://github.com/jshjohnson/Choices" target="_blank">Choices</a>.  
             <br><br>
-            Last Updated: January 2020
+            Last Updated: February 2020
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -123,13 +123,10 @@
                     <a class="nav-link gohome" href="#">Home</a>
                 </li> 
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" href="#exampleModal">About</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link resources" href="#">Resources</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://wiki.cmap.local/mediawiki/index.php/Data_Visualization_at_CMAP#Resources" target="_blank">Wiki</a>
+                    <a class="nav-link" data-toggle="modal" href="#exampleModal">About</a>
                 </li>
             </ul>
         </div>
@@ -170,7 +167,7 @@
     <div id="cardcontainer" class="container" style="margin-top: 50px;">
 
         <div class="card">
-            <img src="abmpic.JPG" class="card-img-top" alt="..." style="height:60%;">
+            <img src="media/abmpic.JPG" class="card-img-top" alt="..." style="height:60%;">
             <div class="card-body">
                 <h5 class="card-title">ABM Calibration and Validation Report</h5>
                 <p class="card-text">
@@ -186,7 +183,7 @@
         </div>
 
             <div class="card">
-                <img src="map1.JPG" class="card-img-top" alt="..." style="height:60%">
+                <img src="media/map1.JPG" class="card-img-top" alt="..." style="height:60%">
                 <div class="card-body">
                     <h5 class="card-title">Map Series Tool</h5>
                     <p class="card-text">
@@ -202,7 +199,7 @@
             </div>
 
         <div class="card">
-            <img src="sidewalk1.JPG" class="card-img-top" alt="..." style="height:60%">
+            <img src="media/sidewalk1.JPG" class="card-img-top" alt="..." style="height:60%">
             <div class="card-body">
                 <h5 class="card-title">Regional Sidewalk Inventory</h5>
                 <p class="card-text">
@@ -218,7 +215,7 @@
         </div>
 
         <div class="card">
-            <img src="atlas1.png" class="card-img-top" alt="..." style="height:60%;">
+            <img src="media/atlas1.png" class="card-img-top" alt="..." style="height:60%;">
             <div class="card-body">
                 <h5 class="card-title">TIP Atlas</h5>
                 <p class="card-text">
@@ -301,7 +298,8 @@
 
 <!-- Resources page -->
     <div id="resources" style="display:none">
-        <div style="width: 70%; margin-top: 50px;" class="mx-auto">
+        <!-- Leaving this out for now -->
+        <!-- <div style="width: 70%; margin-top: 50px;" class="mx-auto">
 
             <h1 id="projname" class="display-4">Staff Knowledge</h1>
             Questions about a specific language or tool?  Reach out to the staff below.  
@@ -327,9 +325,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div style="background-color:#F2F2F2; margin-top: 100px;">
+        <div style="background-color:#F2F2F2;">
             <div style="padding-top: 50px; padding-bottom: 50px; font-size: 18px;" id="detail2">
                 <div style="margin-top: 50px; width: 70%;" class="mx-auto">
 
@@ -340,12 +338,14 @@
                     <div id="topdetail">
                         <div class="row">
                             <div id="firstcol" class="col-sm">
-                                <b>Transportation</b>: Census Transportation Planning Products Program - <a href="https://ctpp.transportation.org/" target="_blank">CTPP</a> <br>
-                                General Transit Feed Specification - <a href="https://www.transitwiki.org/TransitWiki/index.php/Publicly-accessible_public_transportation_data" target="_blank">List of data feeds</a>
+                                <b>Transportation</b><br> Census Transportation Planning Products Program - <a href="https://ctpp.transportation.org/" target="_blank">CTPP</a> <br>
+                                General Transit Feed Specification - <a href="https://www.transitwiki.org/TransitWiki/index.php/Publicly-accessible_public_transportation_data" target="_blank">List of data feeds</a><br>
+                                <b>Chicago</b> <br>Chicago Data Portal - <a href="https://data.cityofchicago.org/" target="_blank">data.cityofchicago.org</a>
                             </div>
                             <div id="secondcol" class="col-sm">
-                                <b>Census</b>: Public Use Microdata Samples - <a href="https://www.census.gov/programs-surveys/acs/data/pums.html" target="_blank">PUMS</a> <br>
-                                Census Data Site - <a href="https://data.census.gov/cedsci/?#" target="_blank">data.census.gov</a>
+                                <b>Census</b><br> Public Use Microdata Samples - <a href="https://www.census.gov/programs-surveys/acs/data/pums.html" target="_blank">PUMS</a> <br>
+                                Census Data Site - <a href="https://data.census.gov/cedsci/?#" target="_blank">data.census.gov</a><br>
+                                <b>General</b> <br> Open Data Network - <a href="https://www.opendatanetwork.com/" target="_blank">opendatanetwork.com</a>
                             </div>
                         </div>
                     </div>
@@ -353,7 +353,18 @@
                 </div>
             </div>
         </div>
-    </div>
+
+            <div style="margin-top: 50px; width: 70%;" class="mx-auto">
+                <h1 class="display-4">Wiki Page</h1>
+                <br>
+                <div style="font-size: 25px; width: 18%; position: absolute;">
+                    <p>Visit internal wiki page for links to tutorial, events, and more.</p> <br>
+                    <a class="btn btn-primary" href="http://wiki.cmap.local/mediawiki/index.php/Data_Visualization_at_CMAP#Resources" target="_blank" role="button">Visit Wiki</a>
+                </div>
+            <img src="media/wiki.JPG" style="width: 70%; float: right; margin-bottom: 150px;"></img>
+            
+                </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -371,7 +382,7 @@
     <script
         src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006273/BBBootstrap/choices.min.js?version=7.0.0"></script>
 
-    <script src="dothings.js"></script>
+    <script src="datavizmenu.js"></script>
 </body>
 
 </html>
