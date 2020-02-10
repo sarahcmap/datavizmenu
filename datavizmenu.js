@@ -1,10 +1,12 @@
 // filter dropdown adapted from https://bbbootstrap.com/snippets/multiselect-dropdown-list-83601849
 // filter action apapted from https://www.codeply.com/go/KvTSAFv2bv/bootstrap-filter-and-sort-cards-with-jquery 
 
+// selection variables
 var topicselected = [];
 var purposeselected = [];
 var whichproj
 
+// hide/show divs ('pages') on button clicks
 $('.card-link').click(function () {
     $('#homepage').hide()
     whichproj = $(this).attr("id")
@@ -24,6 +26,7 @@ $('.resources').click(function () {
     $('#resources').show()
 });
 
+// grab data from csv for different projects and insert into divs in Project Detail Page (#test div)
 function updateprojpage(whichproj) {
     var z
     for (var i = 0; i < dat2.length; i++) {
@@ -64,7 +67,7 @@ function updateprojpage(whichproj) {
     $('#carouselthree').attr('src',dat2[z].pic3)
 };
 
-
+// filter functions
 $('#topicfilter').change(function () {
     topicselected = [];
     var choices = $(this).find("option:selected")
@@ -110,7 +113,7 @@ $('#purposefilter').change(function () {
     }
 });
 
-
+// remove item buttons in filters
 $(document).ready(function () {
 
     var multipleCancelButton = new Choices('#topicfilter', {
@@ -123,7 +126,7 @@ $(document).ready(function () {
 
 });
 
-
+// fetch data from csv
 $.ajax({
     type: "GET",
     url: "projects.csv",
