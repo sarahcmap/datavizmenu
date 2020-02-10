@@ -1,3 +1,6 @@
+// filter dropdown adapted from https://bbbootstrap.com/snippets/multiselect-dropdown-list-83601849
+// filter action apapted from https://www.codeply.com/go/KvTSAFv2bv/bootstrap-filter-and-sort-cards-with-jquery 
+
 var topicselected = [];
 var purposeselected = [];
 var whichproj
